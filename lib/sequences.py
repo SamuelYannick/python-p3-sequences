@@ -6,13 +6,19 @@
 
 def print_fibonacci(length):
     value_1, value_2 = 0, 1
-    print(value_1, end = ", ")
-    print(value_2, end = ", ")
-    for i in range(length):
+    results_list = []
+    
+    if length > 0:
+        results_list.append(value_1)
+    if length > 1:
+        results_list.append(value_2)
+    
+    for _ in range(2, length):
         new_value = value_1 + value_2
-        print(new_value, end = ", ")
         value_1 = value_2
         value_2 = new_value
+        results_list.append(new_value)
+    
+    print(results_list)
 
 print_fibonacci(10)
-
